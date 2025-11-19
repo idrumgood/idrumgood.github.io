@@ -78,6 +78,9 @@ const Navbar = () => {
                                 <Link to="/#contact" onClick={closeNav}>Contact</Link>
                             )}
                         </li>
+                        <li>
+                            <Link to="/gallery" onClick={closeNav} className={location.pathname === '/gallery' ? 'active' : ''}>Gallery</Link>
+                        </li>
                     </ul>
                 </div>
             </div>
