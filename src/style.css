@@ -143,6 +143,11 @@ a:hover {
 .brand-heading {
   font-size: 4rem;
   margin-bottom: 1rem;
+  text-transform: none;
+}
+
+.brand-heading .light {
+  font-weight: 400;
 }
 
 .intro-text {
