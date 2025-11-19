@@ -48,6 +48,33 @@ const Gallery = () => {
         setSelectedIndex((prevIndex) => (prevIndex - 1 + images.length) % images.length);
     };
 
+    // Swipe Logic
+    const [touchStart, setTouchStart] = useState(null);
+    const [touchEnd, setTouchEnd] = useState(null);
+    const minSwipeDistance = 50;
+
+    const onTouchStart = (e) => {
+        setTouchEnd(null);
+        setTouchStart(e.targetTouches[0].clientX);
+    };
+
+    const onTouchMove = (e) => {
+        setTouchEnd(e.targetTouches[0].clientX);
+    };
+
+    const onTouchEnd = () => {
+        if (!touchStart || !touchEnd) return;
+        const distance = touchStart - touchEnd;
+        const isLeftSwipe = distance > minSwipeDistance;
+        const isRightSwipe = distance < -minSwipeDistance;
+
+        if (isLeftSwipe) {
+            nextImage();
+        } else if (isRightSwipe) {
+            prevImage();
+        }
+    };
+
     return (
         <section id="gallery" className="content-section text-center">
             <div className="container">
@@ -75,7 +102,13 @@ const Gallery = () => {
                 )}
 
                 {selectedIndex !== null && (
-                    <div className="lightbox" onClick={closeLightbox}>
+                    <div
+                        className="lightbox"
+                        onClick={closeLightbox}
+                        onTouchStart={onTouchStart}
+                        onTouchMove={onTouchMove}
+                        onTouchEnd={onTouchEnd}
+                    >
                         <div className="lightbox-content" onClick={(e) => e.stopPropagation()}>
                             <img src={images[selectedIndex]} alt="Full resolution" />
                             <button className="lightbox-close" onClick={closeLightbox}>&times;</button>
