@@ -348,6 +348,12 @@ footer {
   object-fit: cover;
   display: block;
   border-radius: 4px;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.gallery-item img.loaded {
+  opacity: 1;
 }
 
 /* Lightbox */

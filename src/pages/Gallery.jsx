@@ -5,10 +5,14 @@ const Gallery = () => {
     const [selectedIndex, setSelectedIndex] = useState(null);
 
     useEffect(() => {
-        // Dynamically load images from src/assets/gallery
-        const imageModules = import.meta.glob('../assets/gallery/*.{png,jpg,jpeg,svg}', { eager: true });
-        const loadedImages = Object.values(imageModules).map((module) => module.default);
-        setImages(loadedImages);
+        // Dynamically load images from src/assets/gallery (lazy)
+        const imageModules = import.meta.glob('../assets/gallery/*.{png,jpg,jpeg,svg}');
+        const promises = Object.values(imageModules).map((module) => module());
+
+        Promise.all(promises).then((modules) => {
+            const loadedImages = modules.map((module) => module.default);
+            setImages(loadedImages);
+        });
     }, []);
 
     useEffect(() => {
@@ -92,13 +96,16 @@ const Gallery = () => {
                 {images.length > 0 ? (
                     <div className="gallery-grid">
                         {images.map((src, index) => (
-                            <div key={index} className="gallery-item" onClick={() => openLightbox(index)}>
-                                <img src={src} alt={`Gallery image ${index + 1}`} loading="lazy" />
-                            </div>
+                            <GalleryItem
+                                key={index}
+                                src={src}
+                                index={index}
+                                onClick={() => openLightbox(index)}
+                            />
                         ))}
                     </div>
                 ) : (
-                    <p className="text-muted">No images found. Add images to <code>src/assets/gallery</code> to see them here.</p>
+                    <p className="text-muted">Loading images...</p>
                 )}
 
                 {selectedIndex !== null && (
@@ -124,6 +131,22 @@ const Gallery = () => {
                 )}
             </div>
         </section>
+    );
+};
+
+const GalleryItem = ({ src, index, onClick }) => {
+    const [loaded, setLoaded] = useState(false);
+
+    return (
+        <div className="gallery-item" onClick={onClick}>
+            <img
+                src={src}
+                alt={`Gallery image ${index + 1}`}
+                loading="lazy"
+                className={`gallery-img ${loaded ? 'loaded' : ''}`}
+                onLoad={() => setLoaded(true)}
+            />
+        </div>
     );
 };
 
