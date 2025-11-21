@@ -8,41 +8,63 @@ const __dirname = path.dirname(__filename);
 
 const galleryDir = path.join(__dirname, '../src/assets/gallery');
 
-if (!fs.existsSync(galleryDir)) {
-    console.error(`Gallery directory not found: ${galleryDir}`);
-    process.exit(1);
+// Get files from command line arguments
+const args = process.argv.slice(2);
+let filesToProcess = [];
+
+if (args.length > 0) {
+    // If arguments are provided, use them (filter for images)
+    filesToProcess = args.filter(file => file.match(/\.(jpg|jpeg|png)$/i));
+    // Resolve absolute paths if needed, but lint-staged usually passes absolute paths
+} else {
+    // Fallback to scanning directory if no args
+    if (!fs.existsSync(galleryDir)) {
+        console.error(`Gallery directory not found: ${galleryDir}`);
+        process.exit(1);
+    }
+    filesToProcess = fs.readdirSync(galleryDir)
+        .filter(file => file.match(/\.(jpg|jpeg|png)$/i))
+        .map(file => path.join(galleryDir, file));
 }
 
-const files = fs.readdirSync(galleryDir);
+if (filesToProcess.length === 0) {
+    console.log('No images to process.');
+    process.exit(0);
+}
 
 (async () => {
-    for (const file of files) {
-        if (file.match(/\.(jpg|jpeg|png)$/i)) {
-            const filePath = path.join(galleryDir, file);
-            const tempPath = path.join(galleryDir, `temp_${file}`);
+    for (const filePath of filesToProcess) {
+        // Ensure file exists (it might be deleted or renamed)
+        if (!fs.existsSync(filePath)) {
+            continue;
+        }
 
-            try {
-                console.log(`Optimizing ${file}...`);
-                const metadata = await sharp(filePath).metadata();
+        const dir = path.dirname(filePath);
+        const ext = path.extname(filePath);
+        const name = path.basename(filePath, ext);
+        const tempPath = path.join(dir, `temp_${name}${ext}`);
 
-                // Only resize if width is greater than 1920
-                let pipeline = sharp(filePath);
-                if (metadata.width > 1920) {
-                    pipeline = pipeline.resize(1920);
-                }
+        try {
+            console.log(`Optimizing ${path.basename(filePath)}...`);
+            const metadata = await sharp(filePath).metadata();
 
-                await pipeline
-                    .jpeg({ quality: 80, mozjpeg: true })
-                    .toFile(tempPath);
+            // Only resize if width is greater than 1920
+            let pipeline = sharp(filePath);
+            if (metadata.width > 1920) {
+                pipeline = pipeline.resize(1920);
+            }
 
-                fs.unlinkSync(filePath);
-                fs.renameSync(tempPath, filePath);
-                console.log(`Done: ${file}`);
-            } catch (err) {
-                console.error(`Error processing ${file}:`, err);
-                if (fs.existsSync(tempPath)) {
-                    fs.unlinkSync(tempPath);
-                }
+            await pipeline
+                .jpeg({ quality: 80, mozjpeg: true })
+                .toFile(tempPath);
+
+            fs.unlinkSync(filePath);
+            fs.renameSync(tempPath, filePath);
+            console.log(`Done: ${path.basename(filePath)}`);
+        } catch (err) {
+            console.error(`Error processing ${path.basename(filePath)}:`, err);
+            if (fs.existsSync(tempPath)) {
+                fs.unlinkSync(tempPath);
             }
         }
     }
