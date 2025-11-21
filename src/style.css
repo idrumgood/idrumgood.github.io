@@ -118,6 +118,14 @@ a:hover {
   background-color: #000;
 }
 
+[data-theme="light"] .navbar.scrolled .theme-toggle {
+  color: rgba(0, 0, 0, 0.7);
+}
+
+[data-theme="light"] .navbar.scrolled .theme-toggle:hover {
+  color: var(--accent-color);
+}
+
 .container {
   max-width: 1200px;
   margin: 0 auto;
@@ -155,6 +163,15 @@ a:hover {
 
 .navbar-nav a:hover,
 .navbar-nav a.active {
+  color: var(--accent-color);
+}
+
+.theme-toggle {
+  color: rgba(255, 255, 255, 0.8);
+  transition: color 0.3s ease;
+}
+
+.theme-toggle:hover {
   color: var(--accent-color);
 }
 
