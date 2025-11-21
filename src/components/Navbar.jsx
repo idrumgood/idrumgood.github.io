@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 
+import ThemeToggle from './ThemeToggle';
+
 const Navbar = () => {
     const [isScrolled, setIsScrolled] = useState(false);
     const [isNavOpen, setIsNavOpen] = useState(false);
@@ -80,6 +82,9 @@ const Navbar = () => {
                         </li>
                         <li>
                             <Link to="/gallery" onClick={closeNav} className={location.pathname === '/gallery' ? 'active' : ''}>Gallery</Link>
+                        </li>
+                        <li style={{ display: 'flex', alignItems: 'center' }}>
+                            <ThemeToggle />
                         </li>
                     </ul>
                 </div>
