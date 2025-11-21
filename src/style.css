@@ -5,8 +5,33 @@
   --accent-color: #42dca3;
   /* A modern green/teal */
   --nav-bg: rgba(0, 0, 0, 0.8);
+  --panel-bg: #111;
+  --panel-border: #333;
+  --panel-heading-bg: #1a1a1a;
   --font-main: 'Lora', serif;
   --font-sans: 'Montserrat', sans-serif;
+}
+
+[data-theme="light"] {
+  --bg-color: #f4f4f4;
+  --text-color: #333;
+  --heading-color: #000;
+  --nav-bg: rgba(255, 255, 255, 0.95);
+  --panel-bg: #fff;
+  --panel-border: #ddd;
+  --panel-heading-bg: #f9f9f9;
+  --accent-color: #2a9d75;
+  /* Darker teal for light mode */
+}
+
+[data-theme="light"] .btn-default {
+  border-color: #333;
+  color: #333;
+}
+
+[data-theme="light"] .btn-default:hover {
+  background: #333;
+  color: #fff;
 }
 
 * {
@@ -51,6 +76,10 @@ a:hover {
   color: #fff;
 }
 
+[data-theme="light"] a:hover {
+  color: #000;
+}
+
 /* Navigation */
 .navbar {
   position: fixed;
@@ -66,6 +95,27 @@ a:hover {
   padding: 10px 0;
   backdrop-filter: blur(10px);
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+[data-theme="light"] .navbar.scrolled {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+[data-theme="light"] .navbar.scrolled .navbar-brand {
+  color: #000;
+}
+
+[data-theme="light"] .navbar.scrolled .navbar-nav a {
+  color: rgba(0, 0, 0, 0.7);
+}
+
+[data-theme="light"] .navbar.scrolled .navbar-nav a:hover,
+[data-theme="light"] .navbar.scrolled .navbar-nav a.active {
+  color: var(--accent-color);
+}
+
+[data-theme="light"] .navbar.scrolled .navbar-toggle .bar {
+  background-color: #000;
 }
 
 .container {
@@ -173,6 +223,7 @@ a:hover {
   font-size: 4rem;
   margin-bottom: 1rem;
   text-transform: none;
+  color: #fff;
 }
 
 .brand-heading .light {
@@ -182,6 +233,7 @@ a:hover {
 .intro-text {
   font-size: 1.2rem;
   margin-bottom: 3rem;
+  color: #fff;
 }
 
 .btn-circle {
@@ -225,8 +277,8 @@ a:hover {
 }
 
 .panel {
-  background-color: #111;
-  border: 1px solid #333;
+  background-color: var(--panel-bg);
+  border: 1px solid var(--panel-border);
   border-radius: 4px;
   overflow: hidden;
   transition: transform 0.3s ease;
@@ -238,9 +290,9 @@ a:hover {
 }
 
 .panel-heading {
-  background-color: #1a1a1a;
+  background-color: var(--panel-heading-bg);
   padding: 15px;
-  border-bottom: 1px solid #333;
+  border-bottom: 1px solid var(--panel-border);
 }
 
 .panel-heading h3 {
