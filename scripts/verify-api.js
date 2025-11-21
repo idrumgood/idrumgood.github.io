@@ -30,6 +30,7 @@ const verifyGoodreads = async () => {
             console.log('✅ Goodreads OK');
             if (data.items.length > 0) {
                 console.log('   Book:', data.items[0].title);
+                console.log('   Full Item:', JSON.stringify(data.items[0], null, 2));
             } else {
                 console.log('   No books currently reading found.');
             }
