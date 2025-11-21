@@ -13,12 +13,21 @@ const Interests = () => {
                 const data = await response.json();
                 if (data.items && data.items.length > 0) {
                     const book = data.items[0];
-                    // Extract author from title if needed or use author field if available and clean
+
+                    // Author is often empty in rss2json for Goodreads, but present in description
+                    let author = book.author;
+                    if (!author && book.description) {
+                        const authorMatch = book.description.match(/author: (.*?)<br>/);
+                        if (authorMatch && authorMatch[1]) {
+                            author = authorMatch[1];
+                        }
+                    }
+
                     setReading({
                         title: book.title,
-                        author: book.author,
+                        author: author,
                         link: book.link,
-                        image: book.thumbnail // rss2json often provides a thumbnail
+                        image: book.thumbnail
                     });
                 }
             } catch (error) {
