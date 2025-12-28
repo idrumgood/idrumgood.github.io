@@ -84,7 +84,7 @@ const Interests = () => {
                                     <h3>Watching</h3>
                                 </div>
                                 <div className="panel-body">
-                                    Working my way through "Alone Season 10"
+                                    Watching my way through "Stranger Things Season 5"
                                 </div>
                             </div>
                             <div className="panel">
@@ -92,7 +92,7 @@ const Interests = () => {
                                     <h3>Playing</h3>
                                 </div>
                                 <div className="panel-body">
-                                    Fighting machines in "ARC Raiders"
+                                    Exploring Bohemia in "Kingdom Come Deliverance II"
                                 </div>
                             </div>
                             <div className="panel">
