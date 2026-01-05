@@ -9,7 +9,8 @@
     "postbuild": "cp dist/index.html dist/404.html",
     "lint": "eslint .",
     "preview": "vite preview",
-    "prepare": "husky"
+    "prepare": "husky",
+    "fetch-trakt": "node scripts/fetch-trakt.js"
   },
   "lint-staged": {
     "src/assets/gallery/*.{jpg,jpeg,png}": [

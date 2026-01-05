@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import config from '../config';
+import watchingData from '../data/watching.json';
 
 const Interests = () => {
     const [reading, setReading] = useState(null);
@@ -84,7 +85,16 @@ const Interests = () => {
                                     <h3>Watching</h3>
                                 </div>
                                 <div className="panel-body">
-                                    Watching my way through "Stranger Things Season 5"
+                                    {watchingData && watchingData.title ? (
+                                        <>
+                                            Watching my way through "{watchingData.title}"
+                                            {watchingData.episode && (
+                                                <> (S{watchingData.episode.season}E{watchingData.episode.number})</>
+                                            )}
+                                        </>
+                                    ) : (
+                                        "Taking a break from the screen..."
+                                    )}
                                 </div>
                             </div>
                             <div className="panel">
