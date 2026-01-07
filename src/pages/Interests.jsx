@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import config from '../config';
 import watchingData from '../data/watching.json';
+import playingData from '../data/playing.json';
 
 const Interests = () => {
     const [reading, setReading] = useState(null);
@@ -102,7 +103,16 @@ const Interests = () => {
                                     <h3>Playing</h3>
                                 </div>
                                 <div className="panel-body">
-                                    Exploring Bohemia in "Kingdom Come Deliverance II"
+                                    {playingData && playingData.title ? (
+                                        <>
+                                            {"Currently playing "}
+                                            <a href={`https://store.steampowered.com/app/${playingData.game_id}`} target="_blank" rel="noopener noreferrer">
+                                                "{playingData.title}"
+                                            </a>
+                                        </>
+                                    ) : (
+                                        "Taking a break from the controllers..."
+                                    )}
                                 </div>
                             </div>
                             <div className="panel">
