@@ -38,6 +38,11 @@ jobs:
         env:
           TRAKT_CLIENT_ID: ${{ secrets.TRAKT_CLIENT_ID }}
 
+      - name: Fetch Steam Data
+        run: node scripts/fetch-steam.js
+        env:
+          STEAM_API_KEY: ${{ secrets.STEAM_API_KEY }}
+
       - name: Build
         run: npm run build
 
