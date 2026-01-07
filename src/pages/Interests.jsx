@@ -105,7 +105,7 @@ const Interests = () => {
                                 <div className="panel-body">
                                     {playingData && playingData.title ? (
                                         <>
-                                            {playingData.playing ? "Currently playing " : "A lot of recently played "}
+                                            {"Currently playing "}
                                             <a href={`https://store.steampowered.com/app/${playingData.game_id}`} target="_blank" rel="noopener noreferrer">
                                                 "{playingData.title}"
                                             </a>
