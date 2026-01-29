@@ -45,7 +45,7 @@ const verifyGoodreads = async () => {
 const verifyLastfm = async () => {
     console.log('Verifying Last.fm...');
     try {
-        const url = `https://ws.audioscrobbler.com/2.0/?method=user.gettopalbums&user=${config.lastfmUser}&api_key=${config.lastfmApiKey}&period=1month&format=json&limit=1`;
+        const url = `https://ws.audioscrobbler.com/2.0/?method=user.gettopalbums&user=${config.lastfmUser}&api_key=${config.lastfmApiKey}&period=7day&format=json&limit=1`;
         const data = await fetchUrl(url);
         if (data.topalbums) {
             console.log('✅ Last.fm OK');

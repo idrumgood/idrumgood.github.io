@@ -40,7 +40,7 @@ const Interests = () => {
         // Fetch Last.fm Top Album (7 days to ensure recent activity, or 1month as requested)
         const fetchLastfm = async () => {
             try {
-                const response = await fetch(`https://ws.audioscrobbler.com/2.0/?method=user.gettopalbums&user=${config.lastfmUser}&api_key=${config.lastfmApiKey}&period=1month&format=json&limit=1`);
+                const response = await fetch(`https://ws.audioscrobbler.com/2.0/?method=user.gettopalbums&user=${config.lastfmUser}&api_key=${config.lastfmApiKey}&period=7day&format=json&limit=1`);
                 const data = await response.json();
                 if (data.topalbums && data.topalbums.album && data.topalbums.album.length > 0) {
                     const album = data.topalbums.album[0];
