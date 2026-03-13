@@ -1,0 +1,28 @@
+[
+    {
+        "name": "Big Think",
+        "description": "Explores the big ideas shaping the 21st century.",
+        "url": "https://bigthink.com"
+    },
+    {
+        "name": "Dynomight",
+        "description": "Digging deep into data and challenging common assumptions.",
+        "url": "https://dynomight.net"
+    },
+    {
+        "name": "New Bands for Old Heads",
+        "description": "New music recommendations for fans of 80s and 90s bands.",
+        "url": "https://newbandsforoldheads.com"
+    },
+    {
+        "name": "The Garden of Forking Paths",
+        "description": "Wandering around an infinitely complex, ever-changing world.",
+        "url": "https://brianklaas.substack.com"
+    },
+    {
+        "name": "The Intrinsic Perspective",
+        "description": "Exploring science, history, and literature beyond disciplinary barriers.",
+        "url": "https://erikhoel.substack.com"
+    }
+]
+

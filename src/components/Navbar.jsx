@@ -75,6 +75,13 @@ const Navbar = () => {
                         </li>
                         <li>
                             {isHome ? (
+                                <a href="#inspiration" onClick={closeNav}>Inspiration</a>
+                            ) : (
+                                <Link to="/#inspiration" onClick={closeNav}>Inspiration</Link>
+                            )}
+                        </li>
+                        <li>
+                            {isHome ? (
                                 <a href="#contact" onClick={closeNav}>Contact</a>
                             ) : (
                                 <Link to="/#contact" onClick={closeNav}>Contact</Link>
