@@ -3,6 +3,7 @@ import { useLocation } from 'react-router-dom';
 import Intro from '../components/Intro';
 import About from './About';
 import Interests from './Interests';
+import Reading from './Reading';
 import Contact from './Contact';
 
 const Home = () => {
@@ -24,6 +25,7 @@ const Home = () => {
             <Intro />
             <About />
             <Interests />
+            <Reading />
             <Contact />
         </>
     );

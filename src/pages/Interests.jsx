@@ -88,7 +88,15 @@ const Interests = () => {
                                 <div className="panel-body">
                                     {watchingData && watchingData.title ? (
                                         <>
-                                            Watching my way through "{watchingData.title}"
+                                            {watchingData.type === 'movie' ? 'Recently watched ' : 'Watching my way through '}
+                                            <a 
+                                                href={`https://trakt.tv/${watchingData.type === 'movie' ? 'movies' : 'shows'}/${watchingData.trakt_slug}`} 
+                                                target="_blank" 
+                                                rel="noopener noreferrer"
+                                            >
+                                                "{watchingData.title}"
+                                            </a>
+                                            {watchingData.type === 'movie' && watchingData.year && <> ({watchingData.year})</>}
                                             {watchingData.episode && (
                                                 <> (S{watchingData.episode.season}E{watchingData.episode.number})</>
                                             )}

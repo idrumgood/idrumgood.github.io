@@ -66,7 +66,8 @@ const run = async () => {
                         number: latest.episode.number,
                         title: latest.episode.title
                     },
-                    watched_at: latest.watched_at
+                    watched_at: latest.watched_at,
+                    trakt_slug: latest.show.ids.slug
                 };
                 console.log(`✅ Found show: ${result.title} S${result.episode.season}E${result.episode.number}`);
             } else if (latest.type === 'movie') {
@@ -74,7 +75,8 @@ const run = async () => {
                     type: 'movie',
                     title: latest.movie.title,
                     year: latest.movie.year,
-                    watched_at: latest.watched_at
+                    watched_at: latest.watched_at,
+                    trakt_slug: latest.movie.ids.slug
                 };
                 console.log(`✅ Found movie: ${result.title} (${result.year})`);
             }
