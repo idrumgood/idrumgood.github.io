@@ -88,6 +88,9 @@ const Navbar = () => {
                             )}
                         </li>
                         <li>
+                            <Link to="/projects" onClick={closeNav} className={location.pathname === '/projects' ? 'active' : ''}>Projects</Link>
+                        </li>
+                        <li>
                             <Link to="/gallery" onClick={closeNav} className={location.pathname === '/gallery' ? 'active' : ''}>Gallery</Link>
                         </li>
                         <li style={{ display: 'flex', alignItems: 'center' }}>

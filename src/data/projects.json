@@ -1,0 +1,14 @@
+[
+    {
+        "name": "Brekky Sammy",
+        "description": "A side project dedicated to finding, rating, and reviewing the best breakfast sandwiches.",
+        "url": "https://brekkysammy.com",
+        "tags": ["Side Project", "Rating App", "Foodie"]
+    },
+    {
+        "name": "Trackstar",
+        "description": "An app built to help plan weekly workouts, track progress, and visualize stats on your training consistency.",
+        "url": "https://gettrackstar.com",
+        "tags": ["Web App", "Fitness Tracker", "Stats & Analytics"]
+    }
+]
