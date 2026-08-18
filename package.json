@@ -10,8 +10,8 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "prepare": "husky",
-    "fetch-trakt": "node --env-file=.env scripts/fetch-trakt.js",
-    "fetch-steam": "node --env-file=.env scripts/fetch-steam.js"
+    "fetch-steam": "node --env-file=.env scripts/fetch-steam.js",
+    "verify-api": "node --env-file=.env scripts/verify-api.js"
   },
   "lint-staged": {
     "src/assets/gallery/*.{jpg,jpeg,png}": [

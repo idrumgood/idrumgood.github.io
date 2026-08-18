@@ -62,7 +62,30 @@ const verifyLastfm = async () => {
     }
 };
 
+const verifySteam = async () => {
+    console.log('Verifying Steam...');
+    const steamKey = process.env.STEAM_API_KEY;
+    if (!steamKey) {
+        console.warn('⚠️ Steam Skipped: STEAM_API_KEY not found in environment');
+        return;
+    }
+    try {
+        const vanityUrl = `https://api.steampowered.com/ISteamUser/ResolveVanityURL/v0001/?key=${steamKey}&vanityurl=idrumgood`;
+        const data = await fetchUrl(vanityUrl);
+        if (data.response && data.response.success === 1) {
+            console.log('✅ Steam OK (Resolved SteamID:', data.response.steamid + ')');
+        } else {
+            console.error('❌ Steam Failed to resolve vanity URL:', data);
+        }
+    } catch (error) {
+        console.error('❌ Steam Error:', error.message);
+    }
+};
+
 (async () => {
     await verifyGoodreads();
     await verifyLastfm();
+    await verifySteam();
 })();
+
+

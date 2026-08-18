@@ -35,11 +35,6 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Fetch Trakt Data
-        run: node scripts/fetch-trakt.js
-        env:
-          TRAKT_CLIENT_ID: ${{ secrets.TRAKT_CLIENT_ID }}
-
       - name: Fetch Steam Data
         run: node scripts/fetch-steam.js
         env:
