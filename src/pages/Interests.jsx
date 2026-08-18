@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
 import config from '../config';
-import watchingData from '../data/watching.json';
 import playingData from '../data/playing.json';
 
 const Interests = () => {
@@ -78,31 +77,6 @@ const Interests = () => {
                                         </>
                                     ) : (
                                         "Loading..."
-                                    )}
-                                </div>
-                            </div>
-                            <div className="panel">
-                                <div className="panel-heading">
-                                    <h3>Watching</h3>
-                                </div>
-                                <div className="panel-body">
-                                    {watchingData && watchingData.title ? (
-                                        <>
-                                            {watchingData.type === 'movie' ? 'Recently watched ' : 'Watching my way through '}
-                                            <a 
-                                                href={`https://trakt.tv/${watchingData.type === 'movie' ? 'movies' : 'shows'}/${watchingData.trakt_slug}`} 
-                                                target="_blank" 
-                                                rel="noopener noreferrer"
-                                            >
-                                                "{watchingData.title}"
-                                            </a>
-                                            {watchingData.type === 'movie' && watchingData.year && <> ({watchingData.year})</>}
-                                            {watchingData.episode && (
-                                                <> (S{watchingData.episode.season}E{watchingData.episode.number})</>
-                                            )}
-                                        </>
-                                    ) : (
-                                        "Taking a break from the screen..."
                                     )}
                                 </div>
                             </div>
