@@ -1,41 +1,12 @@
 import { useState, useEffect } from 'react';
 import config from '../config';
 import playingData from '../data/playing.json';
+import readingData from '../data/reading.json';
 
 const Interests = () => {
-    const [reading, setReading] = useState(null);
     const [listening, setListening] = useState(null);
 
     useEffect(() => {
-        // Fetch Goodreads Currently Reading
-        const fetchGoodreads = async () => {
-            try {
-                const response = await fetch(`https://api.rss2json.com/v1/api.json?rss_url=https://www.goodreads.com/review/list_rss/${config.goodreadsId}?shelf=currently-reading`);
-                const data = await response.json();
-                if (data.items && data.items.length > 0) {
-                    const book = data.items[0];
-
-                    // Author is often empty in rss2json for Goodreads, but present in description
-                    let author = book.author;
-                    if (!author && book.description) {
-                        const authorMatch = book.description.match(/author: (.*?)<br>/);
-                        if (authorMatch && authorMatch[1]) {
-                            author = authorMatch[1];
-                        }
-                    }
-
-                    setReading({
-                        title: book.title,
-                        author: author,
-                        link: book.link,
-                        image: book.thumbnail
-                    });
-                }
-            } catch (error) {
-                console.error("Error fetching Goodreads data:", error);
-            }
-        };
-
         // Fetch Last.fm Top Album (7 days to ensure recent activity, or 1month as requested)
         const fetchLastfm = async () => {
             try {
@@ -55,7 +26,6 @@ const Interests = () => {
             }
         };
 
-        fetchGoodreads();
         fetchLastfm();
     }, []);
 
@@ -71,12 +41,12 @@ const Interests = () => {
                                     <h3>Reading</h3>
                                 </div>
                                 <div className="panel-body">
-                                    {reading ? (
+                                    {readingData && readingData.title ? (
                                         <>
-                                            Currently turning pages of <a href={reading.link} target="_blank" rel="noopener noreferrer">"{reading.title}"</a> by {reading.author}
+                                            Currently turning pages of <a href={readingData.link} target="_blank" rel="noopener noreferrer">"{readingData.title}"</a> by {readingData.author}
                                         </>
                                     ) : (
-                                        "Loading..."
+                                        "Taking a break from the bookshelf..."
                                     )}
                                 </div>
                             </div>
