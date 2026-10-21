@@ -40,6 +40,9 @@ jobs:
         env:
           STEAM_API_KEY: ${{ secrets.STEAM_API_KEY }}
 
+      - name: Fetch Goodreads Data
+        run: node scripts/fetch-goodreads.js
+
       - name: Build
         run: npm run build
 

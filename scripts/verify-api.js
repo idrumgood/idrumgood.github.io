@@ -21,21 +21,47 @@ const fetchUrl = (url) => {
     });
 };
 
+const fetchText = (url) => {
+    return new Promise((resolve, reject) => {
+        https.get(url, {
+            headers: {
+                'User-Agent': 'Mozilla/5.0 (compatible; idrumgood.github.io/1.0)',
+                'Accept': 'application/rss+xml, application/xml, text/xml'
+            }
+        }, (res) => {
+            let data = '';
+            res.on('data', (chunk) => {
+                data += chunk;
+            });
+            res.on('end', () => {
+                if (res.statusCode === 200) {
+                    resolve(data);
+                } else {
+                    reject(new Error(`Status ${res.statusCode}`));
+                }
+            });
+        }).on('error', (err) => {
+            reject(err);
+        });
+    });
+};
+
 const verifyGoodreads = async () => {
     console.log('Verifying Goodreads...');
     try {
-        const url = `https://api.rss2json.com/v1/api.json?rss_url=https://www.goodreads.com/review/list_rss/${config.goodreadsId}?shelf=currently-reading`;
-        const data = await fetchUrl(url);
-        if (data.status === 'ok' && data.items) {
+        const url = `https://www.goodreads.com/review/list_rss/${config.goodreadsId}?shelf=currently-reading`;
+        const xml = await fetchText(url);
+        if (xml.includes('<rss')) {
             console.log('✅ Goodreads OK');
-            if (data.items.length > 0) {
-                console.log('   Book:', data.items[0].title);
-                console.log('   Full Item:', JSON.stringify(data.items[0], null, 2));
+            const titleMatch = xml.match(/<item>[\s\S]*?<title>([\s\S]*?)<\/title>/i);
+            if (titleMatch) {
+                const title = titleMatch[1].replace(/^<!\[CDATA\[([\s\S]*?)\]\]>$/, '$1').trim();
+                console.log('   Book:', title);
             } else {
                 console.log('   No books currently reading found.');
             }
         } else {
-            console.error('❌ Goodreads Failed:', data);
+            console.error('❌ Goodreads Failed: Unexpected response');
         }
     } catch (error) {
         console.error('❌ Goodreads Error:', error.message);
