@@ -191,34 +191,6 @@
             }
         },
         {
-            "id": "rakunk-ep",
-            "title": "Rakunk EP",
-            "artist": "Rakunk",
-            "type": "EP",
-            "releaseDate": "2015-01-27",
-            "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/a2/6a/7b/a26a7b90-2d55-87d9-87ae-91143a29c251/859714005562_cover.jpg/600x600bb.jpg",
-            "description": "Self-titled debut EP from Chicago rock band Rakunk.",
-            "tracks": [
-                "Writing With a Knife",
-                "Wicked Bible",
-                "Banged Up",
-                "About to See the Light"
-            ],
-            "embed": {
-                "provider": "bandcamp",
-                "bandcampId": "album=1129861488"
-            },
-            "links": {
-                "spotify": "https://open.spotify.com/album/3FJpSztVL9cjL9jJTv0m11",
-                "appleMusic": "https://music.apple.com/us/album/rakunk-ep-ep/957504492",
-                "qobuz": "https://www.qobuz.com/us-en/album/rakunk-ep-rakunk/r8ljrnak97wxb",
-                "tidal": "https://listen.tidal.com/album/40241279",
-                "amazonMusic": "https://music.amazon.com/albums/B00SCVSPUQ",
-                "bandcamp": "https://rakunk.bandcamp.com/album/rakunk-ep",
-                "deezer": "https://www.deezer.com/album/9541154"
-            }
-        },
-        {
             "id": "van-goghs-roman-candle",
             "title": "Roman Candle",
             "artist": "The Van Goghs",
