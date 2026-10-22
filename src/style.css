@@ -711,3 +711,505 @@ footer {
 [data-theme="light"] .project-card:hover .btn-project {
   color: #fff;
 }
+
+/* Music Page */
+.music-intro-text {
+  color: var(--text-color);
+  margin-bottom: 1.5rem;
+}
+
+.music-artist-jump {
+  margin-bottom: 50px;
+}
+
+.music-jump-label {
+  display: block;
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: var(--text-color);
+  margin-bottom: 12px;
+  opacity: 0.85;
+}
+
+.music-platform-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.music-hero-platforms {
+  justify-content: center;
+}
+
+.music-platform-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 14px;
+  font-family: var(--font-sans);
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  color: var(--heading-color);
+  background-color: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--panel-border);
+  border-radius: 6px;
+  transition: transform 0.2s ease, background-color 0.25s ease, border-color 0.25s ease, color 0.25s ease;
+}
+
+[data-theme="light"] .music-platform-btn {
+  background-color: rgba(0, 0, 0, 0.03);
+}
+
+.music-platform-btn:hover {
+  transform: translateY(-2px);
+  background-color: var(--accent-color);
+  border-color: var(--accent-color);
+  color: #000;
+}
+
+[data-theme="light"] .music-platform-btn:hover {
+  color: #fff;
+}
+
+.platform-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Featured Single Card */
+.music-featured-card {
+  max-width: 1000px;
+  margin: 0 auto 70px;
+  background-color: var(--panel-bg);
+  border: 1px solid var(--accent-color);
+  border-radius: 10px;
+  overflow: hidden;
+  text-align: left;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+}
+
+[data-theme="light"] .music-featured-card {
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+.music-featured-badge-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 14px 28px;
+  background-color: var(--panel-heading-bg);
+  border-bottom: 1px solid var(--panel-border);
+}
+
+.music-featured-badge {
+  display: inline-block;
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  padding: 4px 10px;
+  border-radius: 4px;
+  background-color: var(--accent-color);
+  color: #000;
+}
+
+[data-theme="light"] .music-featured-badge {
+  color: #fff;
+}
+
+.music-featured-date {
+  font-family: var(--font-sans);
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  color: var(--text-color);
+}
+
+.music-featured-content {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 32px;
+  padding: 28px;
+  align-items: start;
+}
+
+.music-featured-artwork-wrap {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid var(--panel-border);
+  background-color: #000;
+}
+
+.music-featured-artwork {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.music-featured-details {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  min-width: 0;
+}
+
+.music-release-artist {
+  display: inline-block;
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--accent-color);
+  margin-bottom: 4px;
+}
+
+.music-featured-heading h3 {
+  font-size: 1.9rem;
+  margin-bottom: 8px;
+  text-transform: none;
+}
+
+.music-featured-description {
+  font-size: 1rem;
+  color: var(--text-color);
+  margin: 0;
+}
+
+.music-featured-player {
+  background-color: var(--panel-heading-bg);
+  border: 1px solid var(--panel-border);
+  border-radius: 8px;
+  padding: 16px;
+}
+
+.music-player-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--heading-color);
+  margin-bottom: 12px;
+}
+
+.music-player-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: var(--accent-color);
+  display: inline-block;
+}
+
+.music-embed-track-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.music-track-tab {
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 6px 12px;
+  border-radius: 4px;
+  border: 1px solid var(--panel-border);
+  background: var(--panel-bg);
+  color: var(--text-color);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.music-track-tab:hover {
+  border-color: var(--accent-color);
+  color: var(--heading-color);
+}
+
+.music-track-tab.active {
+  background: var(--accent-color);
+  border-color: var(--accent-color);
+  color: #000;
+}
+
+[data-theme="light"] .music-track-tab.active {
+  color: #fff;
+}
+
+.music-embed-iframe {
+  display: block;
+  border-radius: 4px;
+}
+
+.music-links-heading {
+  display: block;
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--text-color);
+  margin-bottom: 10px;
+}
+
+/* Discography Header & Filter Tabs */
+.music-discography-header {
+  max-width: 1000px;
+  margin: 0 auto 30px;
+}
+
+.music-discography-header h3 {
+  font-size: 1.5rem;
+  margin-bottom: 8px;
+}
+
+.music-discography-subtitle {
+  font-size: 1rem;
+  color: var(--text-color);
+  margin-bottom: 24px;
+}
+
+.music-filter-tabs {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.music-filter-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  background-color: var(--panel-bg);
+  color: var(--text-color);
+  border: 1px solid var(--panel-border);
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.music-filter-btn:hover {
+  border-color: var(--accent-color);
+  color: var(--heading-color);
+}
+
+.music-filter-btn.active {
+  background-color: var(--accent-color);
+  border-color: var(--accent-color);
+  color: #000;
+}
+
+[data-theme="light"] .music-filter-btn.active {
+  color: #fff;
+}
+
+.music-filter-count {
+  font-size: 0.7rem;
+  padding: 1px 6px;
+  border-radius: 10px;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+[data-theme="light"] .music-filter-btn:not(.active) .music-filter-count {
+  background-color: rgba(0, 0, 0, 0.08);
+}
+
+/* Releases Grid & Cards */
+.music-releases-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(440px, 1fr));
+  gap: 28px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.music-release-card {
+  background-color: var(--panel-bg);
+  border: 1px solid var(--panel-border);
+  border-radius: 8px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 18px;
+  text-align: left;
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.music-release-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--accent-color);
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.2);
+}
+
+[data-theme="light"] .music-release-card:hover {
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.07);
+}
+
+.music-card-top {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+}
+
+.music-card-art-container {
+  width: 110px;
+  height: 110px;
+  flex-shrink: 0;
+  border-radius: 6px;
+  overflow: hidden;
+  border: 1px solid var(--panel-border);
+  background-color: #000;
+}
+
+.music-card-art {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.music-card-meta {
+  flex: 1;
+  min-width: 0;
+}
+
+.music-card-badges {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 6px;
+}
+
+.music-artist-badge {
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  color: var(--accent-color);
+}
+
+.music-type-badge {
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--text-color);
+  opacity: 0.8;
+}
+
+.music-card-title {
+  font-size: 1.25rem;
+  text-transform: none;
+  margin-bottom: 6px;
+  color: var(--heading-color);
+}
+
+.music-card-desc {
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: var(--text-color);
+  margin: 0;
+}
+
+.music-card-tracklist {
+  border-top: 1px solid var(--panel-border);
+  padding-top: 14px;
+}
+
+.music-tracklist-label {
+  display: block;
+  font-family: var(--font-sans);
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  color: var(--text-color);
+  margin-bottom: 8px;
+}
+
+.music-card-stream-section {
+  border-top: 1px solid var(--panel-border);
+  padding-top: 14px;
+}
+
+.music-stream-toggle {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 14px;
+  font-family: var(--font-sans);
+  font-size: 0.76rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  background-color: var(--panel-heading-bg);
+  color: var(--heading-color);
+  border: 1px solid var(--panel-border);
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.music-stream-toggle:hover,
+.music-stream-toggle.open {
+  border-color: var(--accent-color);
+  color: var(--accent-color);
+}
+
+.music-card-embed {
+  margin-top: 12px;
+}
+
+.music-card-footer {
+  border-top: 1px solid var(--panel-border);
+  padding-top: 14px;
+}
+
+@media (max-width: 768px) {
+  .music-featured-content {
+    grid-template-columns: 1fr;
+    padding: 20px;
+  }
+
+  .music-featured-artwork-wrap {
+    max-width: 260px;
+    margin: 0 auto;
+  }
+
+  .music-releases-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .music-card-top {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .music-card-badges {
+    justify-content: center;
+  }
+}

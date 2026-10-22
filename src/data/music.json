@@ -1,0 +1,271 @@
+{
+    "artistProfile": {
+        "name": "idrumgood",
+        "tagline": "Electronic beats, hardware synth explorations, and rock releases from Chicago.",
+        "links": {
+            "spotify": "https://open.spotify.com/artist/5n13XUtQRxaYQhZil7rSEN",
+            "appleMusic": "https://music.apple.com/us/artist/idrumgood/1667896299",
+            "qobuz": "https://www.qobuz.com/us-en/interpreter/idrumgood/17153043",
+            "tidal": "https://listen.tidal.com/album/559523373",
+            "amazonMusic": "https://music.amazon.com/albums/B0HJ7DLRJC",
+            "bandcamp": "https://idrumgood.bandcamp.com",
+            "soundcloud": "https://soundcloud.com/idrumgood"
+        }
+    },
+    "featuredReleaseId": "broadcasters",
+    "releases": [
+        {
+            "id": "broadcasters",
+            "title": "BROADCASTERS",
+            "artist": "idrumgood",
+            "type": "Single",
+            "releaseDate": "2026-09-11",
+            "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/78/5a/1b/785a1bdd-c3fd-034e-ed9a-13cdbfed6cf0/artwork.jpg/600x600bb.jpg",
+            "description": "Two-track hardware electronic single featuring \"BROADCASTERS\" and \"ARBOR (EAT EM)\".",
+            "tracks": [
+                "BROADCASTERS",
+                "ARBOR (EAT EM)"
+            ],
+            "embed": {
+                "provider": "soundcloud",
+                "tracks": [
+                    {
+                        "title": "BROADCASTERS",
+                        "apiUrl": "https://api.soundcloud.com/tracks/2229171464"
+                    },
+                    {
+                        "title": "ARBOR (EAT EM)",
+                        "apiUrl": "https://api.soundcloud.com/tracks/2199291243"
+                    }
+                ]
+            },
+            "links": {
+                "spotify": "https://open.spotify.com/album/6QylBI6QFFnme1fwzExony",
+                "appleMusic": "https://music.apple.com/us/album/broadcasters-single/6809974142",
+                "qobuz": "https://www.qobuz.com/us-en/album/broadcasters-idrumgood/ntrae3ggiqmcr",
+                "tidal": "https://listen.tidal.com/album/559523373",
+                "amazonMusic": "https://music.amazon.com/albums/B0HJ7DLRJC",
+                "soundcloud": "https://soundcloud.com/idrumgood/broadcasters",
+                "deezer": "https://www.deezer.com/album/1074095752"
+            }
+        },
+        {
+            "id": "searching-4-u",
+            "title": "SEARCHING 4 U",
+            "artist": "idrumgood",
+            "type": "Single",
+            "releaseDate": "2024-08-23",
+            "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/9b/8f/23/9b8f23e8-cd44-f174-f35f-081679635756/artwork.jpg/600x600bb.jpg",
+            "description": "Driving electronic single crafted on hardware synths and samplers.",
+            "tracks": [
+                "SEARCHING 4 U"
+            ],
+            "embed": {
+                "provider": "bandcamp",
+                "bandcampId": "track=2742145589"
+            },
+            "links": {
+                "spotify": "https://open.spotify.com/album/1WXOMKhzk9FPbjq3mQyl7C",
+                "appleMusic": "https://music.apple.com/us/album/searching-4-u-single/6809953379",
+                "qobuz": "https://www.qobuz.com/us-en/album/searching-4-u-idrumgood/ovemhl3s84h9m",
+                "tidal": "https://listen.tidal.com/track/559513222",
+                "amazonMusic": "https://music.amazon.com/albums/B0HJ6RL1YB",
+                "bandcamp": "https://idrumgood.bandcamp.com/track/searching-4-u",
+                "deezer": "https://www.deezer.com/album/624301821"
+            }
+        },
+        {
+            "id": "beats001",
+            "title": "BEATS001",
+            "artist": "idrumgood",
+            "type": "Album",
+            "releaseDate": "2023-01-31",
+            "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/54/a2/d6/54a2d622-ae85-7685-cf54-fc4c7f965c60/artwork.jpg/600x600bb.jpg",
+            "description": "Seven-track instrumental beat tape and synth exploration.",
+            "tracks": [
+                "Down",
+                "Gnarly",
+                "Play",
+                "Mmm",
+                "Collective Institutional",
+                "Please Feel",
+                "droits de l'homme"
+            ],
+            "links": {
+                "spotify": "https://open.spotify.com/album/3ABvoFNjh6vuguRIo4CG3s",
+                "appleMusic": "https://music.apple.com/us/album/beats001/6809965810",
+                "qobuz": "https://www.qobuz.com/us-en/album/beats001-idrumgood/npzsycvrqq75v",
+                "tidal": "https://listen.tidal.com/album/559521168",
+                "amazonMusic": "https://music.amazon.com/albums/B0HJ6Z8V2N",
+                "deezer": "https://www.deezer.com/album/1074090362"
+            }
+        },
+        {
+            "id": "sunblood-unreal",
+            "title": "Unreal",
+            "artist": "Sunblood",
+            "type": "Album",
+            "releaseDate": "2023-12-28",
+            "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music126/v4/98/7c/75/987c75fa-b035-2ec1-6a26-6156f01f775b/859781971975_cover.jpg/600x600bb.jpg",
+            "description": "Seven-track album from Chicago rock band Sunblood.",
+            "tracks": [
+                "Change",
+                "Among Us",
+                "Unreal",
+                "Weeks",
+                "Watch Ourselves Burn",
+                "Headlights",
+                "Final Call"
+            ],
+            "links": {
+                "spotify": "https://open.spotify.com/album/7356Vd7QlwtW63m5axO2xm",
+                "appleMusic": "https://music.apple.com/us/album/unreal/1723660906",
+                "qobuz": "https://www.qobuz.com/us-en/album/unreal-sunblood/mir1xptwxibyc",
+                "tidal": "https://listen.tidal.com/album/337758371",
+                "amazonMusic": "https://music.amazon.com/albums/B0CR8CW59S",
+                "deezer": "https://www.deezer.com/album/529699902"
+            }
+        },
+        {
+            "id": "sunblood-ep",
+            "title": "Sunblood EP",
+            "artist": "Sunblood",
+            "type": "EP",
+            "releaseDate": "2020-06-29",
+            "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music123/v4/dc/de/f1/dcdef118-0905-2897-03ab-892b444afc63/859740391325_cover.jpg/600x600bb.jpg",
+            "description": "Debut four-track EP from Chicago alternative rock band Sunblood.",
+            "tracks": [
+                "Stand in the Fire",
+                "Spin",
+                "Beast Kitten",
+                "Slaughter"
+            ],
+            "embed": {
+                "provider": "bandcamp",
+                "bandcampId": "album=3879117982"
+            },
+            "links": {
+                "spotify": "https://open.spotify.com/album/16xG4JBGEMcXnZU0Tpbky1",
+                "appleMusic": "https://music.apple.com/us/album/sunblood-ep/1521410690",
+                "tidal": "https://listen.tidal.com/album/146952310",
+                "amazonMusic": "https://music.amazon.com/albums/B08C37Y1MX",
+                "bandcamp": "https://sunblood.bandcamp.com/album/sunblood-ep"
+            }
+        },
+        {
+            "id": "rakunk-turn-the-power-on",
+            "title": "Turn the Power On",
+            "artist": "Rakunk",
+            "type": "Single",
+            "releaseDate": "2016-09-26",
+            "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music62/v4/db/73/66/db736671-4f22-44aa-d049-7ceb9f5f2a9d/859718382867_cover.jpg/600x600bb.jpg",
+            "description": "Garage/alternative rock single from Chicago's Rakunk.",
+            "tracks": [
+                "Turn the Power On"
+            ],
+            "links": {
+                "spotify": "https://open.spotify.com/album/1bDR8y4rkO4g76FDLmVetn",
+                "appleMusic": "https://music.apple.com/us/album/turn-the-power-on-single/1159573866",
+                "tidal": "https://listen.tidal.com/track/65404043",
+                "amazonMusic": "https://music.amazon.com/albums/B01M1V3508",
+                "deezer": "https://www.deezer.com/album/14166096"
+            }
+        },
+        {
+            "id": "rakunk-trillionaire",
+            "title": "Trillionaire",
+            "artist": "Rakunk",
+            "type": "Single",
+            "releaseDate": "2016-06-18",
+            "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music20/v4/d8/a5/54/d8a5540d-f746-ca7d-7431-846834beb381/859717619896_cover.jpg/600x600bb.jpg",
+            "description": "2016 single from Rakunk.",
+            "tracks": [
+                "Trillionaire"
+            ],
+            "links": {
+                "spotify": "https://open.spotify.com/album/0wrXSEV4iVr6m3bRoauNUC",
+                "appleMusic": "https://music.apple.com/us/album/trillionaire-single/1126465094",
+                "tidal": "https://listen.tidal.com/track/62227056",
+                "amazonMusic": "https://music.amazon.com/albums/B01HDU8L9G",
+                "deezer": "https://www.deezer.com/album/13413657"
+            }
+        },
+        {
+            "id": "rakunk-ep",
+            "title": "Rakunk EP",
+            "artist": "Rakunk",
+            "type": "EP",
+            "releaseDate": "2015-01-27",
+            "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/a2/6a/7b/a26a7b90-2d55-87d9-87ae-91143a29c251/859714005562_cover.jpg/600x600bb.jpg",
+            "description": "Self-titled debut EP from Chicago rock band Rakunk.",
+            "tracks": [
+                "Writing With a Knife",
+                "Wicked Bible",
+                "Banged Up",
+                "About to See the Light"
+            ],
+            "embed": {
+                "provider": "bandcamp",
+                "bandcampId": "album=1129861488"
+            },
+            "links": {
+                "spotify": "https://open.spotify.com/album/3FJpSztVL9cjL9jJTv0m11",
+                "appleMusic": "https://music.apple.com/us/album/rakunk-ep-ep/957504492",
+                "qobuz": "https://www.qobuz.com/us-en/album/rakunk-ep-rakunk/r8ljrnak97wxb",
+                "tidal": "https://listen.tidal.com/album/40241279",
+                "amazonMusic": "https://music.amazon.com/albums/B00SCVSPUQ",
+                "bandcamp": "https://rakunk.bandcamp.com/album/rakunk-ep",
+                "deezer": "https://www.deezer.com/album/9541154"
+            }
+        },
+        {
+            "id": "van-goghs-roman-candle",
+            "title": "Roman Candle",
+            "artist": "The Van Goghs",
+            "type": "EP",
+            "releaseDate": "2013-05-04",
+            "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music/v4/41/2b/b1/412bb159-ad23-3ac5-925c-2949c74cb521/849926001964.jpg/600x600bb.jpg",
+            "description": "Five-track jangle-rock EP from The Van Goghs.",
+            "tracks": [
+                "Johnny Rocketshoes",
+                "Goodbye Ms. New York",
+                "Roman Candle",
+                "Wildlife",
+                "Shrinking Violet"
+            ],
+            "embed": {
+                "provider": "bandcamp",
+                "bandcampId": "album=868983214"
+            },
+            "links": {
+                "appleMusic": "https://music.apple.com/us/album/roman-candle-ep/671034861",
+                "tidal": "https://listen.tidal.com/album/48937436",
+                "amazonMusic": "https://music.amazon.com/albums/B00DU4GM4Q",
+                "bandcamp": "https://thevangoghs.bandcamp.com/album/roman-candle-ep"
+            }
+        },
+        {
+            "id": "van-goghs-escape-of-the-jellyfish",
+            "title": "Escape of the Jellyfish",
+            "artist": "The Van Goghs",
+            "type": "EP",
+            "releaseDate": "2011-06-22",
+            "artwork": "https://f4.bcbits.com/img/a3046224870_5.jpg",
+            "description": "Debut five-track EP by The Van Goghs.",
+            "tracks": [
+                "A Big Bang Conversation",
+                "Higher to the Sun",
+                "Penguino",
+                "Our Best Plans",
+                "Dots In Space And Time"
+            ],
+            "embed": {
+                "provider": "bandcamp",
+                "bandcampId": "album=224458607"
+            },
+            "links": {
+                "bandcamp": "https://thevangoghs.bandcamp.com/album/escape-of-the-jellyfish-ep"
+            }
+        }
+    ]
+}
