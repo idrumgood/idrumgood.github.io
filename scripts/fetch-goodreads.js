@@ -11,10 +11,15 @@ const fetchText = (url) => {
     return new Promise((resolve, reject) => {
         https.get(url, {
             headers: {
-                'User-Agent': 'Mozilla/5.0 (compatible; idrumgood.github.io/1.0)',
-                'Accept': 'application/rss+xml, application/xml, text/xml'
+                'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+                'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+                'Accept-Language': 'en-US,en;q=0.9'
             }
         }, (res) => {
+            if (res.statusCode >= 300 && res.statusCode < 400 && res.headers.location) {
+                const redirectUrl = new URL(res.headers.location, url).toString();
+                return resolve(fetchText(redirectUrl));
+            }
             let data = '';
             res.on('data', (chunk) => {
                 data += chunk;
@@ -23,7 +28,7 @@ const fetchText = (url) => {
                 if (res.statusCode === 200) {
                     resolve(data);
                 } else {
-                    reject(new Error(`API returned ${res.statusCode}`));
+                    reject(new Error(`HTTP ${res.statusCode} for ${url}`));
                 }
             });
         }).on('error', (err) => {
@@ -32,31 +37,44 @@ const fetchText = (url) => {
     });
 };
 
-const extractTag = (xml, tag) => {
-    const match = xml.match(new RegExp(`<${tag}>([\\s\\S]*?)<\\/${tag}>`, 'i'));
-    if (!match) return null;
-    return match[1]
-        .replace(/^<!\[CDATA\[([\s\S]*?)\]\]>$/, '$1')
-        .trim()
-        .replace(/^<!\[CDATA\[([\s\S]*?)\]\]>$/, '$1')
+const decodeEntities = (str) => {
+    if (!str) return null;
+    return str
+        .replace(/&#(\d+);/g, (_, dec) => String.fromCharCode(Number(dec)))
+        .replace(/&#x([0-9a-fA-F]+);/g, (_, hex) => String.fromCharCode(parseInt(hex, 16)))
+        .replace(/&quot;/g, '"')
+        .replace(/&apos;/g, "'")
+        .replace(/&lt;/g, '<')
+        .replace(/&gt;/g, '>')
+        .replace(/&amp;/g, '&')
         .trim();
 };
 
 const run = async () => {
     console.log(`Fetching Goodreads data for ${config.goodreadsId}...`);
     try {
-        const url = `https://www.goodreads.com/review/list_rss/${config.goodreadsId}?shelf=currently-reading`;
-        const xml = await fetchText(url);
+        const url = `https://www.goodreads.com/user/show/${config.goodreadsId}`;
+        const html = await fetchText(url);
 
-        const itemMatch = xml.match(/<item>([\s\S]*?)<\/item>/i);
+        const sectionMatch = html.match(/id="currentlyReadingReviews"([\s\S]*?)<\/div>\s*<\/div>\s*<div class="bigBoxBottom">/i);
         let result = { title: null };
 
-        if (itemMatch) {
-            const itemXml = itemMatch[1];
-            const title = extractTag(itemXml, 'title');
-            const author = extractTag(itemXml, 'author_name');
-            const link = extractTag(itemXml, 'link');
-            const image = extractTag(itemXml, 'book_image_url');
+        if (sectionMatch) {
+            const sectionHtml = sectionMatch[1];
+
+            // Extract short title and link from the cover anchor, falling back to bookTitle anchor
+            const coverAnchorMatch = sectionHtml.match(/<div class="firstcol">\s*<a[^>]*title="([^"]+)"[^>]*href="([^"]+)"/i);
+            const bookTitleMatch = sectionHtml.match(/<a class="bookTitle" href="([^"]+)">([\s\S]*?)<\/a>/i);
+            const authorMatch = sectionHtml.match(/<a class="authorName"[^>]*>([\s\S]*?)<\/a>/i);
+            const imageMatch = sectionHtml.match(/<img[^>]*src="([^"]+)"/i);
+
+            const rawTitle = coverAnchorMatch ? coverAnchorMatch[1] : (bookTitleMatch ? bookTitleMatch[2] : null);
+            const rawHref = coverAnchorMatch ? coverAnchorMatch[2] : (bookTitleMatch ? bookTitleMatch[1] : null);
+
+            const title = decodeEntities(rawTitle);
+            const author = authorMatch ? decodeEntities(authorMatch[1]) : null;
+            const link = rawHref ? new URL(decodeEntities(rawHref), 'https://www.goodreads.com').toString() : null;
+            const image = imageMatch ? decodeEntities(imageMatch[1]) : null;
 
             if (title) {
                 result = {
